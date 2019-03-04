@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-mark-display
+    :markdown="markdown"
+    :src="src"
+    @title="setTitle"
+    keyboard-ctrl
+    url-hash-ctrl
+    auto-font-size
+  ></v-mark-display>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import VMarkDisplay from "v-mark-display";
 
 export default {
-  name: "app",
-  components: {
-    HelloWorld
+  components: { VMarkDisplay },
+  data() {
+    return { markdown: "" };
+  },
+  methods: {
+    setTitle({ title }) {
+      document.title = title;
+    }
+  },
+  created() {
+    const search = location.search;
+    if (search.length > 1) {
+      this.src = search.substr(1);
+    }
   }
 };
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+  overflow: hidden;
 }
 </style>
