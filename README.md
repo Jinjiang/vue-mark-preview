@@ -1,4 +1,4 @@
-# slides2
+# My Slides
 
 ## Project setup
 ```
