@@ -6,6 +6,8 @@
     keyboard-ctrl
     url-hash-ctrl
     auto-font-size
+    auto-base-url
+    support-preview
   ></v-mark-display>
 </template>
 
