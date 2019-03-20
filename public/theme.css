@@ -1,4 +1,6 @@
-h1, h2, h3, h4, h5, h6 {font-family: Cunia, AliHYAiHei, AliHYAiHei-Beta, 阿里汉仪智能黑体;}
+h1, h2, h3, h4, h5, h6 { font-family: Cunia, AliHYAiHei, AliHYAiHei-Beta, 阿里汉仪智能黑体; }
+html { font-family: Eurostile, Optima, Helvetica; }
+blockquote, q { font-family: Skia; }
 
 /* MTT template */
 
