@@ -1,5 +1,6 @@
 <template>
-  <v-mark-display
+  <mark-display
+    ref="main"
     :markdown="markdown"
     :src="src"
     @title="setTitle"
@@ -8,14 +9,15 @@
     auto-font-size
     auto-base-url
     support-preview
-  ></v-mark-display>
+  ></mark-display>
 </template>
 
 <script>
-import VMarkDisplay from "v-mark-display";
+import MarkDisplay from "vue-mark-display";
+import Hammer from "hammerjs";
 
 export default {
-  components: { VMarkDisplay },
+  components: { MarkDisplay },
   data() {
     return { markdown: "" };
   },
@@ -29,6 +31,23 @@ export default {
     if (search.length > 1) {
       this.src = search.substr(1);
     }
+  },
+  mounted() {
+    const mc = new Hammer(this.$el);
+    const main = this.$refs.main;
+    mc.on("swipe", event => {
+      if (event.pointerType === "mouse") {
+        return;
+      }
+      switch (event.direction) {
+        case Hammer.DIRECTION_LEFT:
+          main.goNext();
+          return;
+        case Hammer.DIRECTION_RIGHT:
+          main.goPrev();
+          return;
+      }
+    });
   }
 };
 </script>
