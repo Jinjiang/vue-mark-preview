@@ -7,6 +7,7 @@
     keyboard-ctrl
     url-hash-ctrl
     auto-font-size
+    auto-blank-target
     auto-base-url
     support-preview
   ></mark-display>
