@@ -1,5 +1,6 @@
 {
-  "name": "my-slides",
+  "name": "vue-mark-preview",
+  "description": "A web app to preview a markdown URL as slides.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
