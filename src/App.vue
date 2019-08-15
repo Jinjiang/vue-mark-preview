@@ -16,6 +16,9 @@
 <script>
 import MarkDisplay from "vue-mark-display";
 import Hammer from "hammerjs";
+import JoyCon from "./joycon";
+
+const joyCon = new JoyCon();
 
 export default {
   components: { MarkDisplay },
@@ -34,8 +37,10 @@ export default {
     }
   },
   mounted() {
-    const mc = new Hammer(this.$el);
     const main = this.$refs.main;
+
+    // gestures
+    const mc = new Hammer(this.$el);
     mc.on("swipe", event => {
       if (event.pointerType === "mouse") {
         return;
@@ -45,6 +50,31 @@ export default {
           main.goNext();
           return;
         case Hammer.DIRECTION_RIGHT:
+          main.goPrev();
+          return;
+      }
+    });
+
+    // joycon
+    joyCon.start();
+    joyCon.on("keydown", event => {
+      switch (event.code) {
+        case "left":
+        case "down":
+        case "A":
+        case "B":
+        case "plus":
+        case "SR-L":
+        case "SR-R":
+          main.goNext();
+          return;
+        case "right":
+        case "up":
+        case "X":
+        case "Y":
+        case "minus":
+        case "SL-L":
+        case "SL-R":
           main.goPrev();
           return;
       }
