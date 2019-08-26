@@ -3676,6 +3676,11 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+marked@^0.6.1:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.6.3.tgz#79babad78af638ba4d522a9e715cdfdd2429e946"
+  integrity sha512-Fqa7eq+UaxfMriqzYLayfqAE40WN03jf+zHjT18/uXNuzjq3TY0XTbrAoPeqSJrAmPz11VuUA+kBPYOhHt9oOQ==
+
 matcher@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/matcher/-/matcher-1.1.1.tgz#51d8301e138f840982b338b116bb0c09af62c1c2"
@@ -6134,6 +6139,13 @@ vue-loader@^15.6.2:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-mark-display@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/vue-mark-display/-/vue-mark-display-0.1.3.tgz#529b2072fc78c39dee4fe9dd6977a37b061d9b76"
+  integrity sha512-Emf7Lp35mtc/7EgfmWMoGOM2P2zZibLB15SaqzAt0stNXxqZM6J+h8hAYUOwXAlbWwt2LW70mXaU7rYvdVK58w==
+  dependencies:
+    marked "^0.6.1"
 
 vue-style-loader@^4.1.0:
   version "4.1.2"
