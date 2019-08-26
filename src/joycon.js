@@ -109,7 +109,8 @@ export default class JoyCon {
           get() {
             return navigator.getGamepads()[index];
           },
-          enumerable: true
+          enumerable: true,
+          configurable: true
         });
       }
       if (debug) {
