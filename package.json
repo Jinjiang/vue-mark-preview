@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "hammerjs": "^2.0.8",
-    "highlight.js": "^10.1.2",
+    "highlight.js": "^10.4.1",
     "vue": "^2.6.10",
     "vue-mark-display": "^0.2.1"
   },
