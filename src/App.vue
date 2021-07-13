@@ -4,6 +4,7 @@
     :markdown="markdown"
     :src="src"
     @title="setTitle"
+    @change="changePage"
     keyboard-ctrl
     url-hash-ctrl
     auto-font-size
@@ -28,6 +29,14 @@ export default {
   methods: {
     setTitle({ title }) {
       document.title = title;
+    },
+    changePage({ from, to }) {
+      const main = this.$refs.main;
+      const length = main.slides.length;
+      const event = new CustomEvent("slidechange", {
+        detail: { from: from - 1, to: to - 1, length }
+      });
+      main.$el.dispatchEvent(event);
     }
   },
   created() {
