@@ -1,5 +1,7 @@
 # vue-mark-preview
 
+> This repo is not under maintenance anymore. You can refer to a similar project called [Slidev](https://sli.dev/).
+
 A web app to preview a markdown URL as slides, which is based on [`vue-mark-display`](https://github.com/Jinjiang/vue-mark-display).
 
 ## Usage
